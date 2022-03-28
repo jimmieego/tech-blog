@@ -50,6 +50,16 @@ Type aliases and interfaces are very similar, and in many cases you can choose b
 
 [TypeScript Handbook > Literal Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types)
 
+## `null` and `undefined`
+
+JavaScript has two primitive values used to signal absent or uninitialized value: `null` and `undefined`.
+
+### `strictNullChecks` off
+
+With `strictNullChecks` off, values that might be `null` or `undefined` can still be accessed normally, and the values `null` and `undefined` can be assigned to a property of any type.
+
+### `strictNullChecks` on
+
 With [strictNullChecks](https://www.typescriptlang.org/tsconfig#strictNullChecks) on, when a value is `null` or `undefined`, you will need to test for those values before using methods or properties on that value.
 
 ```ts
@@ -72,3 +82,5 @@ function liveDangerously(x?: number | null) {
 ```
 
 Just like other type assertions, this doesn't change the runtime behavior of your code, so it's important to only use `!` when you know that the value can't be `null` or `undefined`.
+
+## Enums
